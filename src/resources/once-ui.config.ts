@@ -21,7 +21,8 @@ const routes: RoutesConfig = {
   "/about": true,
   "/work": true,
   "/blog": true,
-  "/gallery": true,
+  "/gallery": false,
+  "/skills": true,
 };
 
 const display: DisplayConfig = {
@@ -195,9 +196,9 @@ const schema: SchemaConfig = {
 
 // social links
 const sameAs: SameAsConfig = {
-  threads: "https://www.threads.com/@once_ui",
-  linkedin: "https://www.linkedin.com/company/once-ui/",
-  discord: "https://discord.com/invite/5EyAQ4eNdS",
+  threads: "",
+  linkedin: "https://www.linkedin.com/in/muhamad-amirul-hezzat-64864924a?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+  discord: "",
 };
 
 // social sharing configuration for blog posts

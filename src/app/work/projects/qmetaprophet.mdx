@@ -1,0 +1,54 @@
+---
+title: "Vegadon: AI-Driven Ad Analytics"
+publishedAt: "2026-02-17"
+summary: "An AI-powered ad analytics and predictive budget optimization platform built for Malaysian SMEs, leveraging the Meta Prophet framework to forecast campaign performance."
+images:
+  - "/images/project/vvgdwp.png"
+  - "/images/project/prophetw.png"
+team:
+  - name: "Amirul Hezzat"
+    role: "Full-Stack & DevOps Engineer"
+    avatar: "/images/myavatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/your-profile" 
+link: "https://github.com/MisterAmirul/orb9"
+---
+
+## Overview
+
+Small and medium enterprises (SMEs) often struggle to optimize cross-channel advertising spend without data science teams. Vegadon is a commercially live web application designed specifically to bridge this gap for Malaysian businesses. 
+
+The platform allows users to aggregate raw marketing data from multi-channel ad platforms like Meta, Google, and TikTok. By running this data through a custom analytics pipeline, Vegadon forecasts performance and delivers data-backed budget allocation recommendations tailored to the localized nuances of the Malaysian market.
+
+## Key Features
+
+- **Multi-Platform Data Aggregation**: Supports simple CSV ingestion from major ad networks (Meta, Google, TikTok), stripping away data complexity and unifying marketing metrics in one dashboard.
+- **Predictive Performance Forecasting**: Uses the Meta Prophet machine learning framework to look up to 14 days into the future, helping businesses anticipate performance shifts before committing ad spend.
+- **Malaysian Holiday & Culture Alignment**: Integrates a localized calendar overlay that accounts for unique Malaysian public holidays and festive seasons (e.g., Hari Raya, Chinese New Year, Deepavali), automatically adjusting predictions for high-impact shopping periods.
+- **Dynamic Budget Optimization**: Features a smart allocation calculator where users enter a target budget, and the engine automatically isolates high-priority, high-opportunity dates to maximize return on ad spend (ROAS).
+
+## Technologies Used
+
+- **Core Analytics Engine**: Python, Pandas (for data manipulation), Meta Prophet (for time-series forecasting).
+- **Backend & Integration API**: Node.js with TypeScript, orchestrating request flows and handling communication with the Python engine.
+- **Frontend**: React (TSX), Tailwind CSS, optimized for rapid data visualization.
+- **Database**: Supabase (handling user data, ad logs, and platform configurations).
+- **Infrastructure & DevOps**: Hosted on a Linux-based Hostinger VPS behind a custom load balancer. Version control, deployment, and server interactions managed entirely via Git and Git Bash.
+- **Production Domain**: Fully deployed at `https://app.vegadon.cloud`.
+
+## Challenges and Learnings
+
+### Bridge-Building Between Runtime Environments
+One of the core architectural challenges was establishing a clean line of communication between the TypeScript backend (the primary API service layer) and the Python engine (responsible for heavy-lifting data processing and modeling). I resolved this by building an asynchronous worker execution bridge that hands off incoming CSV payloads to Python scripts, safely parsing the returned data frames back into clean JSON for the Supabase database and React frontend.
+
+### Modeling Localized Market Nuances
+Standard forecasting models often miss the dramatic buying behavior spikes linked to cultural holidays. Tuning the Meta Prophet engine to accurately weigh the impact of shifting Malaysian holidays required creating a targeted holiday dataset matrix. Assigning explicit priority weights to these dates prevented the model from misinterpreting holiday traffic spikes as random anomalies, significantly increasing forecast accuracy.
+
+### Scaling and VPS Management
+Transitioning from managed serverless hosting to configuring a raw Linux VPS via Hostinger introduced complex server management responsibilities. Handling production deployments using Git Bash required manual configuration of reverse proxies, environment protections, and setting up a load balancer to ensure the platform remains responsive when parsing large data sets.
+
+## Outcome
+
+Vegadon successfully transitioned from a specialized side project into a live commercialized web application. It offers Malaysian SMEs an accessible, non-technical path to advanced predictive marketing analysis, successfully eliminating ad spend waste by accurately identifying high-priority conversion windows.
+
+---
+*Note: This project was developed with the strategic assistance of AI tools to accelerate boilerplate generation, optimize documentation, and streamline code refactoring.*

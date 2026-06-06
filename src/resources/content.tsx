@@ -1,14 +1,14 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work, Skills } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
+  firstName: "Amirul",
+  lastName: "Hezzat",
+  name: `Amirul Hezzat`,
+  role: "MLOps Intern",
+  avatar: "/images/myavatar.jpg", 
   email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  location: "Asia/Kuala_Lumpur", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
 };
 
@@ -25,31 +25,25 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/MisterAmirul",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/muhamad-amirul-hezzat-64864924a?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     essential: true,
   },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    {
+    name: "Whatsapp",
+    icon: "whatsapp",
+    link: "https://wa.link/wjjpkm",
     essential: true,
   },
   {
     name: "Email",
     icon: "email",
-    link: `mailto:${person.email}`,
+    link: "mailto:amirul.hezzat@s.unikl.edu.my",
     essential: true,
   },
 ];
@@ -60,7 +54,7 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Hi! I'm Amirul.</>,
   featured: {
     display: true,
     title: (
@@ -76,8 +70,10 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      <br />
+      This portfolio showcases my understanding, side-projects, technical skills and articles of broad knowledge, highlighting my passion for building and exploring innovative technology.
+      <br />
+    </>
   ),
 };
 
@@ -102,52 +98,40 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Amirul is a graduate of University Kuala Lumpur (MIIT) with a Diploma in Information Technology. Driven by a curiosity for exploring diverse technology domains, he has developed a broad understanding of both technical and business-oriented systems, embracing a T-shaped professional mindset.
+        <br />
+        <br />
+        Through continuous research, reading, and self-directed learning, he translates theoretical knowledge into hands-on experience in areas such as modern web development, infrastructure, data science, system administration, and operationalizing machine learning models.
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Studies",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "University Kuala Lumpur MIIT",
+        timeframe: "2024 - 2027",
+        role: "Diploma in Information Technology",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Completed extensive 6 semester of various syllabus learning covering fundamental of information technologies, multi-language programming, database, design principles, statistical analysis, discrete mathematics and more.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Exposure to various real-world case studies, ethical dicsussion, hands-on projects and well-rounded theoretical and practical understanding of the IT industry.
           </>,
-        ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "SMK Mergong",
+        timeframe: "2016 - 2021",
+        role: "Technical  Stream",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Initial exposure to various technical subjects such as engineering drawing, physics, mathematics, providing a strong foundation for further studies in IT.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Developed discipline, teamwork, problem-solving abilities, and a strong interest in innovation through academic and extracurricular activities.
           </>,
         ],
         images: [],
@@ -155,8 +139,8 @@ const about: About = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: false, // set to false to hide this section
+    title: "Higher Stud",
     institutions: [
       {
         name: "University of Jakarta",
@@ -169,7 +153,7 @@ const about: About = {
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
+    display: false, // set to false to hide this section
     title: "Technical skills",
     skills: [
       {
@@ -235,7 +219,7 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: "Dedicated to hands-on lab recaps, technical insights, and knowledge sharing.",
   description: `Read what ${person.name} has been up to recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
@@ -243,12 +227,83 @@ const blog: Blog = {
 
 const work: Work = {
   path: "/work",
-  label: "Work",
+  label: "Project",
   title: `Projects – ${person.name}`,
   description: `Design and dev projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
+
+const skills: Skills = {
+  path: "/skills",
+  label: "Qualification",
+  title: `Skills & Learning – ${person.name}`,
+  description: `${person.name}'s certifications, learning journey, and technical skills`,
+  
+  certifications: [
+    {
+      name: "Google Cloud",
+      image: "/images/qualifications/gke-gcp.png",
+      link: "https://www.skills.google/public_profiles/e364194e-4c7a-4471-bd36-959d262cbbbe/badges/24698269",
+    },
+    {
+      name: "Google Cloud",
+      image: "/images/qualifications/gpu-fund.png",
+      link: "https://www.skills.google/public_profiles/e364194e-4c7a-4471-bd36-959d262cbbbe/badges/24619248",
+    },
+    {
+      name: "Google Cloud",
+      image: "/images/qualifications/vertex-fund.png",
+      link: "https://www.skills.google/public_profiles/e364194e-4c7a-4471-bd36-959d262cbbbe",
+    },
+
+    {
+      name: "Google Cloud",
+      image: "/images/qualifications/mlops-gs.png",
+      link: "https://www.skills.google/public_profiles/e364194e-4c7a-4471-bd36-959d262cbbbe/badges/24619248",
+    },
+    {
+      name: "Microsoft Learn",
+      image: "/images/qualifications/ms-data.png",
+      link: "https://learn.microsoft.com/api/achievements/share/en-us/MUHAMADAMIRULHEZZATBINWANAHMAD-3047/9RWCT8YU?sharingId=194FC49822E4ED2A",
+    },
+  ],
+  
+  engagements: [
+    {
+      images: [
+        { src: "/images/qualifications/google-hackt2026.png", alt: "Engagement 1" },
+        { src: "/images/qualifications/goonvidia.png", alt: "Engagement 2" },
+      ],
+    },
+  ],
+  
+  learning: [
+    {
+      category: "Web Development",
+      skills: ["TypeScript", "Node.js", "React", "PostgreSQL"],
+    },
+    {
+      category: "Infrastructure",
+      skills: ["Hosting", "Load Balancer", "Docker", "Blockchain"],
+    },
+    {
+      category: "Artificial Intelligence",
+      skills: ["Statistical Analysis", "Model Development", "GPU Computing"],
+    },
+    {
+      category: "System Administration",
+      skills: ["Linux", "Bash"],
+    },
+    {
+      category: "Tools",
+      skills: ["Git", "Github", "Flutter"],
+    },
+
+  ],
+}
+
+
 
 const gallery: Gallery = {
   path: "/gallery",
@@ -263,42 +318,8 @@ const gallery: Gallery = {
       alt: "image",
       orientation: "horizontal",
     },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
+
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work, gallery, skills };

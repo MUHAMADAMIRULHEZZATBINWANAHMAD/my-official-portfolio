@@ -1,0 +1,50 @@
+---
+title: "Phydigital Blockchain Apparel System"
+publishedAt: "2026-04-18"
+summary: "A hybrid Web3 e-commerce platform bridging physical apparel with cryptographic ownership, featuring secure wallet checkout and automated fulfillment tracking."
+images:
+  - "/images/project/phy-one.png"
+  - "/images/project/phy-two.png"
+team:
+  - name: "Amirul"
+    role: "Full-Stack Web3 Developer"
+    avatar: "/images/myavatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/your-profile" # Update with your actual LinkedIn if desired
+link: "https://github.com/MisterAmirul/Phydigital-NFT-Apparel"
+---
+
+## Overview
+
+Developed as a Final Year Project (FYP) for the Diploma in Information Technology at UniKL MIIT, this project explores the intersection of physical fashion and decentralized technology. 
+
+The Phygital Blockchain Apparel System is a proof-of-concept Web3 e-commerce platform that allows users to purchase physical apparel using cryptocurrency. By pairing physical items with on-chain transactional data, the platform demonstrates how retail brands can leverage blockchain networks for transparent asset management, fraud prevention, and verifiable ownership.
+
+## Key Features
+
+- **Web3 Wallet Authentication**: Seamless dApp connectivity with primary optimization for Uniswap Wallet using the Thirdweb Contract SDK, allowing users to authenticate securely without traditional passwords.
+- **Crypto-Powered Checkout**: A secure, multi-step transaction pipeline on the Ethereum Sepolia network where users sign on-chain transactions to complete apparel purchases.
+- **Hybrid Web2/Web3 Order Flow**: An intuitive post-transaction flow that prompts users to fill out shipping details immediately after a successful blockchain transaction signature, seamlessly linking their wallet address to physical delivery data.
+- **Dynamic Order History & Tracking**: A dedicated user dashboard that queries historical transactions tied to the user's wallet address, reflecting real-time shipping updates.
+- **Automated Admin Panel**: A centralized dashboard powered by a Thirdweb Server Wallet that enables administrators to generate new product listings securely, update shipment milestones, and push status changes directly to the user-facing tracking page.
+
+## Technologies Used
+
+- **Frontend**: React (Vite), TypeScript (TSX), Tailwind CSS, Hosted on **Vercel**.
+- **Backend & Database**: TypeScript, Supabase (Relational Database & Auth Management), Hosted on **Render / Railway**.
+- **Blockchain & Web3 Infrastructure**: Ethereum Sepolia Testnet, Thirdweb Contract SDK, Thirdweb Server Wallet (for secure admin-side transaction execution).
+- **Decentralized Storage**: Pinata IPFS (InterPlanetary File System) for hosting immutable product metadata and assets.
+
+## Challenges and Learnings
+
+### Synchronizing Web2 and Web3 States
+One of the core technical hurdles was bridging the asynchronous nature of blockchain transactions with a traditional relational database. Ensuring that a user's shipping address in Supabase accurately matched an on-chain transaction hash required robust state handling. If a user closed the browser after signing a transaction but before submitting the shipping form, the system risked creating an orphaned order. I resolved this by designing an event-listener architecture that captures transaction success states before unlocking the metadata writing process.
+
+### Secure Server-Side Operations
+Integrating the Thirdweb Server Wallet for admin tasks taught me the critical importance of private key management in production environments. Setting up the backend on Render/Railway required structuring airtight environment variables and ensuring the automated listing creation didn't expose the server wallet to security vulnerabilities.
+
+## Outcome
+
+This project successfully fulfilled all academic requirements for the UniKL MIIT Diploma in IT Final Year Project, achieving praise for its functional architecture. It serves as an end-to-end blueprint for modern "phygital" retail systems, proving that decentralized networks can be efficiently paired with mainstream logistics and relational databases to create a cohesive user experience.
+
+---
+*Note: This project was developed with the strategic assistance of AI tools to accelerate boilerplate generation, optimize documentation, and streamline code refactoring.*

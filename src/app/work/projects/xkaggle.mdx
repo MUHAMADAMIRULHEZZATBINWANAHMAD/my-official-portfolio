@@ -1,0 +1,52 @@
+---
+title: "Quantitative Finance Predictive Engine"
+publishedAt: "2026-05-25"
+summary: "An advanced deep learning forecasting engine combining Mamba Selective State Space Models (SSMs) and Liquid Neural Networks (CfC) to predict intraday Forex market movements."
+images:
+  - "/images/project/quant-one.png"
+  - "/images/project/qquant-two.png"
+team:
+  - name: "Amirul Hezzat"
+    role: "Quantitative Developer"
+    avatar: "/images/myavatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/your-profile"
+link: "https://www.kaggle.com/code/amirulhz/v13-0"
+---
+
+## Overview
+
+Intraday currency markets (Forex) are notoriously noisy and heavily influenced by macroeconomic shifts, cross-asset correlations, and high-frequency structural noise. 
+
+This quantitative project introduces a high-performance predictive engine designed to forecast intraday price action. Built using a multi-scale hybrid architecture, the model synthesizes state-of-the-art sequence modeling, continuous-time differential equations, and rough path theory to ingest cross-asset market data and output precise directional biases for short-term traders.
+
+## Key Features
+
+- **Multi-Scale Temporal Architecture**: Implements a layered lookback framework designed to separate macro market regimes from microstructural volatility:
+  - **Macro Regime (100-Day Window)**: Utilizes a 3-layer Mamba Selective State Space Model (SSM) stack to analyze broad market regimes, prevailing trends, and structural biases.
+  - **Continuous Fluid Dynamics (48-Hour Window)**: Employs a Closed-Form Continuous (CfC) Liquid Neural Network to model fluid, irregular intraday transitions and asset liquidity dynamics.
+  - **Micro Geometry (3-Hour Window)**: Integrates 3D Path Signatures from rough path theory to map the geometric properties and microstructural order-flow paths of the market.
+- **Cross-Asset Macro Feature Ingestion**: Trained on 2 years of historical currency data augmented with critical macroeconomic indicators, including the US Dollar Index (DXY/USDX) and 10-year sovereign bond yields (US and Eurozone) extracted via the FRED API.
+- **Wavelet Signal Preprocessing**: Leverages Wavelet Transforms for multiresolution analysis, effectively stripping out high-frequency noise from raw price action before data enters the deep learning pipeline.
+- **Actionable Intraday Outputs**: Computes precise directional forecasts quantified in expected pip movements (± pips) along with a structural probability heatmap for intraday entry and exit confirmation.
+
+## Technologies Used
+
+- **Core Frameworks**: Python, PyTorch (for custom neural network architecture and tensor operations).
+- **Mathematical Modeling**: Meta/Coda Mamba (SSM), Closed-Form Continuous (CfC) Liquid NN layers, Signatures/Rough Path mathematical libraries, and Scipy/PyWavelets.
+- **Data Engineering**: Pandas, NumPy, FRED (Federal Reserve Economic Data) API.
+- **Infrastructure**: Configured and executed using Kaggle’s distributed infrastructure utilizing Dual NVIDIA T4 GPUs (`T4x2`).
+
+## Challenges and Learnings
+
+### Harmonizing Multi-Scale Temporal Data
+The primary mathematical challenge lay in aligning three vastly different time horizons (100 days, 48 hours, and 3 hours) without suffering from gradient degradation or catastrophic forgetting. Traditional RNNs or LSTMs fail at this scale. By pairing the linear scaling efficiency of the Mamba SSM layers for long-range dependencies with the continuous-time adaptability of Liquid Networks for intermediate windows, the model successfully retained macro context while reacting dynamically to microstructural path changes.
+
+### Compute Optimization & Workflow Partitioning
+Training deep architectures with heavy geometric feature transformations like Path Signatures is computationally expensive. To prevent notebook timeout limitations on Kaggle, the workflow was separated. Feature engineering, cleaning, and multi-asset alignment were handled locally inside VS Code using a highly optimized script (`data-extr.py`). This ensured that the production Kaggle environment was lean, executing the full model training, validation, and inference phases within 5 clean, highly readable notebook cells.
+
+## Outcome
+
+The project successfully delivers a production-grade quantitative workflow on Kaggle, proving that combining selective state space models with continuous differential neural networks yields deep predictive capabilities in chaotic financial environments. The engine consistently produces stable intraday directional probabilities, laying a strong foundation for automated algorithmic execution strategies.
+
+---
+*Note: This project was developed with the strategic assistance of AI tools to accelerate mathematical boilerplate generation, optimize PyTorch tensor shapes, and streamline complex documentation.*

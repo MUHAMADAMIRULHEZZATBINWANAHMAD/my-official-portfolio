@@ -67,3 +67,29 @@
   --scheme-neutral-600-50: rgba(137,152,159,0.5);
   /*
 }*/
+
+.zoom-out-avatar img {
+  object-fit: contain !important;
+  transform: scale(1.27);
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(270px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.cert-card {
+  display: flex; /* Changed from block to flex */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: space-between; /* Push the link to the bottom */
+  align-items: center; /* Center horizontally */
+  height: 100%; /* Make sure cards stretch to fill the grid row height */
+  padding: 8px;
+  border: 1px solid var(--neutral-alpha-medium);
+  border-radius: 20px;
+  overflow: hidden;
+  background: transparent;
+}
+

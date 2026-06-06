@@ -5,9 +5,10 @@ import { useEffect, useState } from "react";
 
 import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
 
-import { routes, display, person, about, blog, work, gallery } from "@/resources";
+import { routes, display, person, about, blog, work, gallery, skills } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
+
 
 type TimeDisplayProps = {
   timeZone: string;
@@ -109,6 +110,26 @@ export const Header = () => {
                   </Row>
                 </>
               )}
+              {routes["/skills"] && (
+                <>
+                  <Row s={{ hide: true }}>
+                    <ToggleButton
+                      prefixIcon="rocket" // You can choose any icon from src/resources/icons.ts
+                      href="/skills"
+                      label={skills.label}
+                      selected={pathname.startsWith("/skills")}
+                    />
+                  </Row>
+                  <Row hide s={{ hide: false }}>
+                    <ToggleButton
+                      prefixIcon="rocket"
+                      href="/skills"
+                      selected={pathname.startsWith("/skills")}
+                    />
+                  </Row>
+                </>
+              )}
+              
               {routes["/work"] && (
                 <>
                   <Row s={{ hide: true }}>
@@ -128,6 +149,8 @@ export const Header = () => {
                   </Row>
                 </>
               )}
+
+              
               {routes["/blog"] && (
                 <>
                   <Row s={{ hide: true }}>

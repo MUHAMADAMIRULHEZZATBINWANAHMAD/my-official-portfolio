@@ -29,6 +29,33 @@ export type Person = {
   languages?: string[];
 };
 
+export type Skills = {
+  path: string;
+  label: string;
+  title: string;
+  description: string;
+  certifications: {
+    name: string;
+    image: string;
+    link: string;
+  }[];
+  engagements: {
+    title?: string;
+    description?: string;
+    date?: string;
+    images?: Array<{
+      src: string;
+      alt: string;
+      width?: number;
+      height?: number;
+    }>;
+  }[];
+  learning: {
+    category: string;
+    skills: string[];
+  }[];
+};
+
 /**
  * Newsletter Section
  * @description The below information will be displayed on the Home page in Newsletter block
