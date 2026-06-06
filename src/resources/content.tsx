@@ -71,7 +71,7 @@ const home: Home = {
   subline: (
     <>
       <br />
-      This portfolio showcases my understanding, side-projects, technical skills and articles of broad knowledge, highlighting my passion for building and exploring innovative technology.
+      This portfolio showcases my academic foundations, practical side-projects, credentials, skills, and hands-on lab blogs, highlighting my passion for building and exploring innovative technology.
       <br />
     </>
   ),

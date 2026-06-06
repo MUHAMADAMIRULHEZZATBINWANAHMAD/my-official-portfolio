@@ -44,15 +44,38 @@ export default function Home() {
       />
       <Column fillWidth horizontal="center" gap="m">
         <Column maxWidth="s" horizontal="center" align="center">
-          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="16">
-            <Heading wrap="balance" variant="display-strong-l">
+          
+          {/* New: Small grey reminder text above the headline */}
+          <RevealFx translateY="2" fillWidth horizontal="center" paddingBottom="8">
+            <Text variant="body-default-s" onBackground="neutral-weak" align="center">
+              * For optimal viewing, please use a desktop.
+            </Text>
+          </RevealFx>
+
+          {/* Changed gap: Reduced paddingBottom from "16" to "4" (or "0") */}
+          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="4">
+            <Heading wrap="balance" variant="display-strong-l" align="center">
               {home.headline}
             </Heading>
           </RevealFx>
-          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="64">
-            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
+
+          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="32">
+            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl" align="center">
               {home.subline}
             </Text>
+          </RevealFx>
+          {/* New Resume Button */}
+          <RevealFx translateY="8" delay={0.25} fillWidth horizontal="center" paddingBottom="24">
+            <Button
+              href="/official-resume.pdf"
+              target="_blank"  // Opens in a new tab
+              variant="secondary"
+              size="m"
+              weight="default"
+              arrowIcon
+            >
+              View Resume
+            </Button>
           </RevealFx>
           {/* Add your new image block here! */}
           <RevealFx translateY="12" delay={0.3} fillWidth horizontal="center" paddingBottom="32">
